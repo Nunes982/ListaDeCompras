@@ -1,4 +1,7 @@
-apply plugin: 'com.android.application'
+plugins {
+    id("com.android.application")
+    id("realm-android")
+}
 
 android {
     compileSdk 34
@@ -15,7 +18,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    namespace 'app.modelo.meusclientes'
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    namespace 'app.br.com.listadecompras'
 }
 
 dependencies {
@@ -23,5 +30,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation("io.realm:realm-gradle-plugin:10.15.1")
 
 }

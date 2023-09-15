@@ -18,8 +18,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
-import app.modelo.meusclientes.R;
-
 // TODO - Criar um novo Layout para suporte aos CARDS
 // TODO - Criar um novo Layout para suporte aos CARDS ListView (ITENS)
 
