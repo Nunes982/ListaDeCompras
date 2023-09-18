@@ -3,6 +3,7 @@ package app.br.com.listadecompras.view;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +19,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Date;
+import java.util.List;
+
 import app.br.com.listadecompras.R;
+import app.br.com.listadecompras.controller.CategoriaController;
+import app.br.com.listadecompras.controller.ProdutoController;
+import app.br.com.listadecompras.model.Categoria;
+import app.br.com.listadecompras.model.Produto;
 
 // TODO - Criar um novo Layout para suporte aos CARDS
 // TODO - Criar um novo Layout para suporte aos CARDS ListView (ITENS)
@@ -74,6 +82,54 @@ public class MainActivity extends AppCompatActivity
 
         // content_fragment usado para receber os layouts dos fragmentos
         fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+
+        manterCategoria();
+        manterProduto();
+
+    }
+
+    private void manterProduto() {
+
+        ProdutoController controller = new ProdutoController();
+
+        Produto obj = new Produto();
+
+        obj.setNomeDoProduto("Teste de Inclusão2 Produto");
+        obj.setUnidadeDeMedida("UN");
+        obj.setQuantidade(0.50);
+        obj.setPrecoPago(10.00);
+        obj.setDataDaInclusao(new Date());
+        obj.setCodigoDeBarras("000102070600000000");
+        //obj.setImagem();  nula por enquanto
+        //obj.setId(3);
+
+        List<Produto> listarProdutos = controller.listar();
+
+        for (Produto o : listarProdutos) {
+
+            Log.i("db_log", "manterProduto: ID "+o.getId()+" "+o.getNomeDoProduto());
+
+        }
+
+    }
+
+    private void manterCategoria() {
+
+        CategoriaController controller = new CategoriaController();
+
+        Categoria obj = new Categoria();
+
+        obj.setNomeDaCategoria("Categoria Alterado");
+        //obj.setId(3);
+        controller.delete(obj);
+
+        List<Categoria> listarCategorias =  controller.listar();
+
+        for (Categoria o: listarCategorias) {
+
+            Log.i("db_log", "manterCategoria: ID "+o.getId()+" "+o.getNomeDaCategoria());
+
+        }
 
     }
 

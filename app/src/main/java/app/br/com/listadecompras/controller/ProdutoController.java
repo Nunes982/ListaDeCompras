@@ -5,7 +5,6 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.br.com.listadecompras.model.Categoria;
 import app.br.com.listadecompras.model.Produto;
 import io.realm.Realm;
 import io.realm.RealmResults;
