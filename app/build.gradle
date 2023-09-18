@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace 'app.br.com.listadecompras'
     compileSdk 34
     defaultConfig {
         applicationId "app.br.com.listadecompras"
@@ -22,7 +23,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    namespace 'app.br.com.listadecompras'
 }
 
 dependencies {

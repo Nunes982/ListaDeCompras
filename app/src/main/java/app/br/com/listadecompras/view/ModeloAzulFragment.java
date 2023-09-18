@@ -1,4 +1,4 @@
-package app.br.com.listadecompras;
+package app.br.com.listadecompras.view;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import app.br.com.listadecompras.R;
 
 public class ModeloAzulFragment extends Fragment {
 
