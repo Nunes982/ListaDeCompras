@@ -11,11 +11,11 @@ import android.widget.TextView;
 
 import app.br.com.listadecompras.R;
 
-public class ModeloAzulFragment extends Fragment {
+public class MeusProdutosFragment extends Fragment {
 
     View view;
 
-    public ModeloAzulFragment() {
+    public MeusProdutosFragment() {
     }
 
 
@@ -29,11 +29,11 @@ public class ModeloAzulFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view =  inflater.inflate(R.layout.fragment_azul, container, false);
+        view =  inflater.inflate(R.layout.fragment_meus_produtos, container, false);
 
         TextView txtTitulo = view.findViewById(R.id.txtTitulo);
 
-        txtTitulo.setText(R.string.modelo_fragment);
+        txtTitulo.setText(R.string.fragmento_meus_produtos);
 
         txtTitulo.setTextColor(ColorStateList.valueOf(Color.CYAN));
 

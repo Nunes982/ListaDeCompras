@@ -5,12 +5,12 @@
     <string name="nav_header_title">Cliente</string>
     <string name="nav_header_subtitle">Profº Marco Maddo</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Sair</string>
+    <string name="action_sair">Sair</string>
 
-    <string name="modelo_fragment">Cliente VIP DEMO</string>
+    <string name="fragmento_meus_produtos">Meus Produtos</string>
+    <string name="fragmento_minhas_compras">Minhas Compras</string>
+    <string name="fragmento_compartilhar">Compartilhar</string>
+    <string name="fragmento_sair_do_app">Sair do App</string>
 
-    <string name="fragmento_preto">Fragmento Preto</string>
-    <string name="fragmento_vermelho">Fragmento Vermelho</string>
-    <string name="fragmento_azul">Fragmento Azul</string>
 
 </resources>

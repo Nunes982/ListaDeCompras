@@ -6,19 +6,24 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_preto"
+            android:id="@+id/nav_meus_produtos"
             android:icon="@drawable/ic_item_menu_padrao"
-            android:title="@string/fragmento_preto" />
+            android:title="@string/fragmento_meus_produtos" />
 
         <item
-            android:id="@+id/nav_vermelho"
+            android:id="@+id/nav_minhas_compras"
             android:icon="@drawable/ic_item_menu_padrao"
-            android:title="@string/fragmento_vermelho" />
+            android:title="@string/fragmento_minhas_compras" />
 
         <item
-            android:id="@+id/nav_azul"
+            android:id="@+id/nav_compartilhar"
             android:icon="@drawable/ic_item_menu_padrao"
-            android:title="@string/fragmento_azul" />
+            android:title="@string/fragmento_compartilhar" />
+
+        <item
+            android:id="@+id/nav_sair"
+            android:icon="@drawable/ic_item_menu_padrao"
+            android:title="@string/fragmento_sair_do_app" />
 
     </group>
 

@@ -45,9 +45,10 @@ public class MainActivity extends AppCompatActivity
     Menu menu;
 
     // Gerenciamento de cada item do menu drawer
-    MenuItem nav_preto;
-    MenuItem nav_vermelho;
-    MenuItem nav_azul;
+    MenuItem nav_meus_produtos;
+    MenuItem nav_minhas_compras;
+    MenuItem nav_compartilhar;
+    MenuItem nav_sair;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity
         fragmentManager = getSupportFragmentManager();
 
         // content_fragment usado para receber os layouts dos fragmentos
-        fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_fragment, new MinhasComprasFragment()).commit();
 
         manterCategoria();
         manterProduto();
@@ -158,7 +159,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_sair) {
             return true;
         }
 
@@ -171,58 +172,87 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         // obter ID para a opção selecionada no MENU DRAWER
-        if (id == R.id.nav_preto) {
+        if (id == R.id.nav_meus_produtos) {
 
             menu = navigationView.getMenu();
 
-            nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto Ativado");
+            nav_meus_produtos = menu.findItem(R.id.nav_meus_produtos);
+            nav_meus_produtos.setTitle("--> Meus Produtos <--");
 
-            nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho");
+            nav_minhas_compras = menu.findItem(R.id.nav_minhas_compras);
+            nav_minhas_compras.setTitle("Minhas Compras");
 
-            nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul");
+            nav_compartilhar = menu.findItem(R.id.nav_compartilhar);
+            nav_compartilhar.setTitle("Compartilhar");
 
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            nav_sair = menu.findItem(R.id.nav_sair);
+            nav_sair.setTitle("Sair");
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.GREEN));
 
-        } else if (id == R.id.nav_vermelho) {
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new MeusProdutosFragment()).commit();
+
+        } else if (id == R.id.nav_minhas_compras) {
 
             menu = navigationView.getMenu();
 
-            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_meus_produtos = menu.findItem(R.id.nav_meus_produtos);
 
-            nav_preto.setTitle("Preto");
+            nav_meus_produtos.setTitle("Meus Produtos");
 
-            nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho Ativado");
+            nav_minhas_compras = menu.findItem(R.id.nav_minhas_compras);
+            nav_minhas_compras.setTitle("--> Minhas Compras <--");
 
-            nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul");
+            nav_compartilhar = menu.findItem(R.id.nav_compartilhar);
+            nav_compartilhar.setTitle("Compartilhar");
+
+            nav_sair = menu.findItem(R.id.nav_sair);
+            nav_sair.setTitle("Sair");
 
             // Mudar a cor de todos os itens do menu programaticamente
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.RED));
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new MinhasComprasFragment()).commit();
 
-        } else if (id == R.id.nav_azul) {
+        } else if (id == R.id.nav_compartilhar) {
 
             menu = navigationView.getMenu();
 
-            nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto");
+            nav_meus_produtos = menu.findItem(R.id.nav_meus_produtos);
+            nav_meus_produtos.setTitle("Meus Produtos");
 
-            nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho");
+            nav_minhas_compras = menu.findItem(R.id.nav_minhas_compras);
+            nav_minhas_compras.setTitle("Minhas Compras");
 
-            nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul Ativado");
+            nav_compartilhar = menu.findItem(R.id.nav_compartilhar);
+            nav_compartilhar.setTitle("--> Compartilhar <--");
 
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            nav_sair = menu.findItem(R.id.nav_sair);
+            nav_sair.setTitle("Sair");
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.GRAY));
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new CompartilharFragment()).commit();
+
+        } else if (id == R.id.nav_sair) {
+
+            menu = navigationView.getMenu();
+
+            nav_meus_produtos = menu.findItem(R.id.nav_meus_produtos);
+            nav_meus_produtos.setTitle("Meus Produtos");
+
+            nav_minhas_compras = menu.findItem(R.id.nav_minhas_compras);
+            nav_minhas_compras.setTitle("Minhas Compras");
+
+            nav_compartilhar = menu.findItem(R.id.nav_compartilhar);
+            nav_compartilhar.setTitle("Compartilhar");
+
+            nav_sair = menu.findItem(R.id.nav_sair);
+            nav_sair.setTitle("--> Sair <--");
+
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.MAGENTA));
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new CompartilharFragment()).commit();
 
         }
 

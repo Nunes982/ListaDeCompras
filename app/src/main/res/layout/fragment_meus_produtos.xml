@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/preto"
-    tools:context="app.br.com.listadecompras.view.ModeloPretoFragment">
+    tools:context="app.br.com.listadecompras.view.MeusProdutosFragment">
 
 
     <!-- Terceiro Passo -->
